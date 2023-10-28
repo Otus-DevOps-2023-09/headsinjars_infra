@@ -1,0 +1,26 @@
+#cloud-config
+write_files:
+  - path: /etc/deploy.sh
+    permissions: '0775'
+    content: |
+      #!/bin/bash
+      sudo apt update -y
+      export LC_CTYPE=en_US.UTF-8
+      export LC_ALL=en_US.UTF-8
+      sudo apt install -y ruby-full ruby-bundler build-essential
+      sudo apt install mongodb -y
+      sudo systemctl start mongodb
+      sudo systemctl enable mongodb
+      sudo apt install git -y
+      sudo git clone -b monolith https://github.com/express42/reddit.git
+      cd reddit && bundle install
+      puma -d
+ssh_pwauth: no
+users:
+  - name: yc-user
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCnyeC11KCS7a3/7mv9qPXq5R5xiKZJZrhNFLFGFgLz21zRGV6uXXP9wn1OrAl0hbssnIkG2uIFjyBTO4ZfqHeaPM1I1yYzI5ndrghSvUXGn8tquQH9k5n3C4e47PCUkEJzkJC0ti58ymdk9sAoVXrlkxtPvNHaPxesCbJQvbNVUTiIP1zDUlzzroBykw8vt7MRfV/qnh7Kt9ESxSz+hsJUkTcgY3onCAoUUDQynRA/ujMZKi7/LZ8PanXRFpGIUMDnw6V15qPm4QhryP2RKbYu2FYo57Vx5b36IbU6eZ8SaY3M10pNoafaeGJqY5H1p9atYFg6vKRAllq78DAfvdmD5esEByj8LmtwZzFv0WteHuUv9ebqOgaoDOjIEA3wWo22Q+m489BrbwRwcY+vQayeHBMs9/9Vwnne9pdoef8+8Pa4Aa2YR5bnjKuK2F1Yj+C+RqaZcYazQRUTSUhNpbGHE2jeJLD6EJf8pwwW/2nAPOr6Uq022pITGS2QLaPs8OU= appuser
+runcmd:
+  - /etc/deploy.sh

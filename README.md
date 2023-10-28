@@ -23,3 +23,20 @@ Host someinternalhost
 
 bastion_IP = 51.250.14.93
 someinternalhost_IP = 10.128.0.8
+
+
+=======
+Д.з.№6
+1. Созданы bash-скрипты:
+   install_ruby.sh - установка Ruby
+   install_mongodb.sh - установка БД MongoDB
+   deploy.sh - деплой Reddit
+2. Доп. задание:
+Разработан startup скрипт для создания/запуска инстанса и автоматического деплоя приложения Reddit:
+
+yc compute instance create   --name reddit-app   --hostname reddit-app   --memory=4   --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB   --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4   --metadata serial-port-enable=1   --metadata-from-file user-data=metadata.yaml   --zone ru-central1-a
+
+Скрипт используется пользовательские метаданные user-data, описанные в файле metadata.yaml
+
+testapp_IP = 62.84.125.125
+testapp_port = 9292
