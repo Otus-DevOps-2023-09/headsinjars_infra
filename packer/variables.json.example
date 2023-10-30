@@ -1,7 +1,7 @@
 {
     "variables":
         {
-            "yc_key_file": "yc_key_test.json",
+            "yc_key_file": "packer/yc_key_test.json",
             "yc_folder_id": "b1g578jhf7nlrs8od6ot",
             "yc_source_image": "fd8e7a6bk4f6khjcpdc0"
         },
