@@ -2,7 +2,7 @@
     "builders": [
         {
             "type": "yandex",
-            "service_account_key_file": "/home/denis/packer/yc_key.json",
+            "service_account_key_file": "packer/yc_key.json",
             "folder_id": "b1g570ghf7nlrs8od6ot",
             "source_image_family": "ubuntu-1604-lts",
             "image_name": "reddit-base-{{timestamp}}",
