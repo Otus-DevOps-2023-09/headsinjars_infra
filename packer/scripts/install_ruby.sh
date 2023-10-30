@@ -1,13 +1,13 @@
 #!/bin/bash
 # This is a script to install Ruby Programming Language
 
-sudo apt update -y
+apt-get update -y
 
 # fix a locale setting warning from Perl
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-
-sudo apt install -y ruby-full ruby-bundler build-essential
+sleep 20
+apt-get install -y ruby-full ruby-bundler build-essential
 
 #sudo apt update -y > ~/install_Ruby.log
 #sudo apt install -y ruby-full ruby-bundler build-essential >> ~/install_Ruby.log

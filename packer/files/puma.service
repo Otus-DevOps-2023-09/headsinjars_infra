@@ -1,0 +1,16 @@
+[Unit]
+Description=Puma HTTP Server
+After=network.target
+
+[Socket]
+ListenStream=0.0.0.0:9292
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/reddit
+
+ExecStart=/usr/local/bin/puma
+
+[Install]
+WantedBy=multi-user.target
