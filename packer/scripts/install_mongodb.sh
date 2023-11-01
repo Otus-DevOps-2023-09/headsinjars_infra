@@ -3,11 +3,12 @@
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-sudo apt update -y
-sudo apt install mongodb -y
+apt-get update -y
+sleep 20
+apt-get install mongodb -y
 # Start mongodb
-sudo systemctl start mongodb
+systemctl start mongodb
 
 # Enable service mongodb
-sudo systemctl enable mongodb
+systemctl enable mongodb
 # end

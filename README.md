@@ -26,7 +26,7 @@ someinternalhost_IP = 10.128.0.8
 
 
 =======
-Д.з.№6
+Д.з.№4
 1. Созданы bash-скрипты:
    install_ruby.sh - установка Ruby
    install_mongodb.sh - установка БД MongoDB
@@ -40,3 +40,39 @@ yc compute instance create   --name reddit-app   --hostname reddit-app   --memor
 
 testapp_IP = 62.84.125.125
 testapp_port = 9292
+
+========
+Д.з. №5
+##
+1. Создана новая ветка packer-base (git checkout -b packer-base).
+##
+2. Установлен Packer версии 1.9.4
+##
+3. В YC создана сервисная учетая запись для работы с packer'ом.
+##
+4. В каталоге packer создан файл конфигурации (ubuntu16.json) для сборки базового
+   baked-образа.
+##
+5. Переопределены переменнные в блоке {"variables"} в файле variables.json
+##
+6. variables.json добавлен в .gitignore для исключения обработки git'ом
+##
+7. Иные опции билдера опробованы в файле variables.json.examples 
+##
+8.1* Решена задача с full-образом (immutable.json). "Запечены" зависимости приложения 
+   и сам код приложения с автоматическим запуском через systemd unit:
+   Файл puma.service расположен в каталоге packer/files. В образ попадает через 
+   блок "provisioners" "type": "file" ыо временную папку /tmp/, далее, в секции
+   "type": "shell" блока provisioners выполняется перенос файла puma.service
+   в каталог /lib/systemd/system
+
+--------
+"sudo mv /tmp/puma.service /lib/systemd/system/puma.service",
+"sudo systemctl enable puma.service",
+"sudo systemctl start puma.service"
+--------
+
+8.2* Создан скрипт для запуска ВМ из full-baked-образа (create-reddit-vm.sh)
+В результате запуска скрипта будет создана ВМ с запущенным приложением.
+Проверка: дождаться раскатки ВМ (порядка 5 минут) и перейти по адресу:
+http://Внещний_IP:9292
