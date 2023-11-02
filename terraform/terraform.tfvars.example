@@ -1,0 +1,8 @@
+cloud_id                 = "b1g8t8ui708klmdt9pg9"
+folder_id                = "b1g570ghf7nlrs8od6ot"
+zone                     = "ru-central1-a"
+image_id                 = "fd8mvkbfkadtrodfl2uv"
+public_key_path          = "~/.ssh/ubuntu.pub"
+subnet_id                = "e9b1opqc53n13d4gdt8n"
+service_account_key_file = "/home/denis/packer/yc_key.json"
+private_key              = "~/.ssh/ubuntu"
