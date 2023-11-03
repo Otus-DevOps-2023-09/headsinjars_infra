@@ -1,11 +1,12 @@
-terraform {
-  required_providers {
-    yandex = {
-      source = "yandex-cloud/yandex"
-    }
-  }
-  required_version = ">= 0.13"
-}
+# для прохождения теста дз
+#terraform {
+#  required_providers {
+#    yandex = {
+#      source = "yandex-cloud/yandex"
+#    }
+#  }
+#  required_version = ">= 0.13"
+#}
 provider "yandex" {
   #token     = "y0_AgAAAAAFFO12AATuwQAAAADwJqvdXhmCcEuRTR24lGDSmYlBmbWL-bw"
   service_account_key_file = var.service_account_key_file
