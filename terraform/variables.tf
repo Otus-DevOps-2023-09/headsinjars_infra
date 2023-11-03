@@ -25,3 +25,10 @@ variable "service_account_key_file" {
 variable "private_key" {
   description = "private_key"
 }
+variable "counter" {
+  default = 1
+  type    = string
+}
+
+
+
