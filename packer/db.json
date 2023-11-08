@@ -1,12 +1,19 @@
 {
+    "variables":
+        {
+            "yc_key_file": "/home/denis/packer/yc_key.json",
+            "yc_folder_id": "b1g570ghf7nlrs8od6ot",
+            "yc_source_image_id": "fd8e7a6bk4f6khjcpdc0"
+        },
+
     "builders": [
         {
             "type": "yandex",
-            "service_account_key_file": "{{user `service_account_key_file`}}",
-            "folder_id": "{{user `folder_id`}}",
-            "source_image_id": "{{user `source_image_id`}}",
+            "service_account_key_file": "{{user `yc_key_file`}}",
+            "folder_id": "{{user `yc_folder_id`}}",
+            "source_image_id": "{{user `yc_source_image_id`}}",
             "source_image_family": "ubuntu-1604-lts",
-            "image_name": "reddit-base-{{timestamp}}",
+            "image_name": "reddit-db-base",
             "image_family": "reddit-base",
             "ssh_username": "ubuntu",
             "platform_id": "standard-v1",
@@ -15,11 +22,6 @@
         }
     ],
     "provisioners": [
-#        {
-#            "type": "shell",
-#            "script": "scripts/install_ruby.sh",
-#            "execute_command": "sudo {{.Path}}"
-#        },
         {
             "type": "shell",
             "script": "scripts/install_mongodb.sh",
