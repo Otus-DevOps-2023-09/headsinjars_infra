@@ -1,3 +1,4 @@
+/* To check github action version
 terraform {
   required_providers {
     yandex = {
@@ -6,6 +7,7 @@ terraform {
   }
   required_version = ">= 0.13"
 }
+*/
 provider "yandex" {
   #token     = "y0_AgAAAAAFFO12AATuwQAAAADwJqvdXhmCcEuRTR24lGDSmYlBmbWL-bw"
   service_account_key_file = var.service_account_key_file
