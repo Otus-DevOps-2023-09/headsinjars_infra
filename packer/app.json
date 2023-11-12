@@ -2,9 +2,9 @@
     "builders": [
         {
             "type": "yandex",
-            "service_account_key_file": "{{user `yc_key_file`}}",
-            "folder_id": "{{user `yc_folder_id`}}",
-            "source_image_id": "{{user `yc_source_image_id`}}",
+            "service_account_key_file": "{{user `key_file`}}",
+            "folder_id": "{{user `folder_id`}}",
+            "source_image_id": "{{user `source_image_id`}}",
             "source_image_family": "ubuntu-1604-lts",
             "image_name": "reddit-app-base",
             "image_family": "reddit-base",
