@@ -1,3 +1,4 @@
+
 packer/variables.json
 *.tfstate
 *.tfstate.*.backup
@@ -7,3 +8,4 @@ packer/variables.json
 /terraform/.terraform.lock.hcl
 /terraform/stage/.terraform.lock.hcl
 /terraform/prod/.terraform.lock.hcl
+
