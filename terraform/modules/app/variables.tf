@@ -9,3 +9,4 @@ variable "app_disk_image" {
 variable "subnet_id" {
   description = "Subnet for modules"
 }
+

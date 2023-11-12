@@ -1,5 +1,5 @@
-/* To check github action version
-terraform {
+/* To check github action version */
+/*terraform {
   required_providers {
     yandex = {
       source = "yandex-cloud/yandex"
@@ -31,4 +31,3 @@ module "db" {
   db_disk_image   = var.db_disk_image
   subnet_id       = var.subnet_id
 }
-

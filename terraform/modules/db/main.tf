@@ -1,5 +1,5 @@
-/*To check github action version
-terraform {
+/*To check github action version */
+/*terraform {
   required_providers {
     yandex = {
       source = "yandex-cloud/yandex"
