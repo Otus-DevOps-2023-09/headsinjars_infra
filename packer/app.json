@@ -13,7 +13,7 @@
             "source_image_family": "ubuntu-1604-lts",
             "image_name": "reddit-app-base",
             "image_family": "reddit-base",
-            "ssh_username": "ubuntu",
+            "ssh_username": "appuser",
             "platform_id": "standard-v1",
             "subnet_id": "e9b1opqc53n13d4gdt8n",
             "use_ipv4_nat": true
