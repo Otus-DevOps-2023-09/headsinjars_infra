@@ -1,4 +1,4 @@
-/*To check github action version comment terraform block*/
+/*To check github action version comment terraform block
 terraform {
   required_providers {
     yandex = {
