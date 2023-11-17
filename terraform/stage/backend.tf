@@ -7,7 +7,7 @@ terraform {
     bucket   = "tf-remote"
     region   = "ru-central1"
     key      = "stage/terraform.tfstate"
-
+    # look readme.md to add export keys
     skip_region_validation      = true
     skip_credentials_validation = true
 

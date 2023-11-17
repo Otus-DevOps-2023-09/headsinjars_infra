@@ -1,5 +1,5 @@
-/*To check github action version */
-/*terraform {
+/*To check github action version comment terraform block*/
+terraform {
   required_providers {
     yandex = {
       source = "yandex-cloud/yandex"
@@ -32,6 +32,7 @@ resource "yandex_compute_instance" "db" {
   }
 
   metadata = {
-    ssh-keys = "ubuntu:${file(var.public_key_path)}"
+    ssh-keys = "appuser:${file(var.public_key_path)}"
   }
 }
+
