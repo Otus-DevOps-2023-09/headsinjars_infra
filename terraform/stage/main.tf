@@ -1,4 +1,4 @@
-/* To check github action version
+/* To check github action version comment terraform block
 terraform {
   required_providers {
     yandex = {
@@ -9,7 +9,7 @@ terraform {
 }
 */
 provider "yandex" {
-  #token     = "y0_AgAAAAAFFO12AATuwQAAAADwJqvdXhmCcEuRTR24lGDSmYlBmbWL-bw"
+  #token                    = "y0_AgAAAAAFFO12AATuwQAAAADwJqvdXhmCcEuRTR24lGDSmYlBmbWL-bw"
   service_account_key_file = var.service_account_key_file
   cloud_id                 = var.cloud_id
   folder_id                = var.folder_id
@@ -86,3 +86,4 @@ module "db" {
   }
 #}
 */
+
