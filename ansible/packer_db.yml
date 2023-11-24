@@ -1,0 +1,31 @@
+---
+- name: Install MongoDB
+  hosts: db
+  become: yes
+
+  tasks:
+    - name: Update cache
+      apt:
+        update_cache: yes
+
+  # Добавим ключ репозитория для последующей работы с ним
+    - name: Add APT key
+      apt_key:
+        id: EA312927
+        keyserver: keyserver.ubuntu.com
+
+  # Подключаем репозиторий с пакетами mongodb
+    - name: Add APT repository
+      apt_repository:
+        repo: deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse
+        state: present
+
+    - name: Install mongodb package
+      apt:
+        name: mongodb-org
+        state: present
+
+    - name: Start service mongod
+      service: name=mongodb enabled=yes state=started
+
+
